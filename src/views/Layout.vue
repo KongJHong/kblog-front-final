@@ -4,6 +4,7 @@
     <!-- <el-button @click="click()">默认按钮</el-button>
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <router-view/>
   </div>
 </template>
 
@@ -23,7 +24,7 @@ import { Component, Vue } from "vue-property-decorator";
   }
 })
 
-export default class Home extends Vue{
+export default class Layout extends Vue{
 
   loginForm: LoginDTO = {
     username: 'xiaoma',
@@ -39,6 +40,9 @@ export default class Home extends Vue{
 
 <style lang="less" scoped>
   
-  
+  .home {
+    height: 1000px;
+    background-color: aqua;
+  }
   
 </style>
