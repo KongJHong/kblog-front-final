@@ -10,7 +10,18 @@ const constantRoutes: Array<RouteConfig> = [
   {
     path: '/',
     name: 'layout',
-    component: Layout
+    component: Layout,
+    redirect: '/home',
+    children: [
+      {
+        path: 'home',
+        component: () => import("@/views/Home.vue"),
+        name: 'Home',
+        meta: {
+          title: '首页'
+        }
+      }
+    ]
   },
   {
     path: '/about',

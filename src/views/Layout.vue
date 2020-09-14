@@ -1,10 +1,9 @@
 <template>
-  <div class="home">
-    <Navigation />
-    <!-- <el-button @click="click()">默认按钮</el-button>
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <router-view/>
+  <div>
+    <el-container>
+      <el-header  class="navbar"><Navigation/></el-header>
+      <el-main class="home"><router-view/></el-main>
+    </el-container>
   </div>
 </template>
 
@@ -43,6 +42,11 @@ export default class Layout extends Vue{
   .home {
     height: 1000px;
     background-color: aqua;
+    padding: 0px
+  }
+
+  el-header {
+    height: 50px;
   }
   
 </style>
