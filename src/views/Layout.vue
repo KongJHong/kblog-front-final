@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-container>
-      <el-header  class="navbar"><Navigation/></el-header>
+      <el-header style="height: 50px"  class="navbar"><Navigation/></el-header>
       <el-main class="home"><router-view/></el-main>
     </el-container>
   </div>
@@ -44,9 +44,4 @@ export default class Layout extends Vue{
     background-color: aqua;
     padding: 0px
   }
-
-  el-header {
-    height: 50px;
-  }
-  
 </style>

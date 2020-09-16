@@ -41,7 +41,7 @@
 
     <el-drawer
       title="我是标题"
-      direction="ltr"
+      direction="rtl"
       :modal="false"
       :visible.sync="drawer"
       :with-header="false">

@@ -22,6 +22,11 @@
           <div class="img-box">
             <img class="img-content" src="https://i.loli.net/2020/08/30/RfLEX7Ty1FlqbGm.jpg">
           </div>
+          <div class="content">
+            读后感时代光华单身公害读后感时代光华单身公害读后感时代光华单身公害读后感时代光华单身公害读后感时代光华单身公害读后感时代光华单身公害
+            读后感时代光华单身公害读后感时代光华单身公害读后感时代光华单身公害读后感时代光华单身公害
+            读后感时代光华单身公害读后感时代光华单身公害读后感时代光华单身公害读后感时代光华单身公害 
+          </div>
         </el-main>
       </el-container>
     </div>
@@ -50,18 +55,17 @@ export default class Article extends Vue {
   width: 700px;
   min-width: 700px;
   
-  height: 400px;
   margin: 10px auto 10px;
   z-index: 0;
   .article {
     background-color: white;
     padding-bottom: 10px;
     width: 100%;
-    height: 90%;
     padding-top: 20px;
     .article-header {
       text-align: center;
       transition: all 2s;
+      height: 42px;
       .article-title {
         height: 60%;
         line-height: 100%;
@@ -100,15 +104,20 @@ export default class Article extends Vue {
     }
 
     .article-content {
-      height: 310px;
+      padding-top: 0px;
       .img-box {
-        
+        height: 260px;
+        margin-bottom: 10px;
         .img-content {
-          width: 70%;
+          max-width: 70%;
           height: auto;
           margin: 0 auto;
           display: block;
         }
+      }
+
+      .content {
+
       }
     }
 
