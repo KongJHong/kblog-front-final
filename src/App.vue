@@ -6,6 +6,5 @@
 
 <style lang="less">
 .app {
-  background-color: aqua;
 }
 </style>

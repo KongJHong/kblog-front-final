@@ -7,12 +7,17 @@
             <el-col :span="24">
               <div class="article-header">
                 <a class="article-title">
-                  title
+                  {{articleInfo.title}}
                 </a>
                 <div class="article-introduction">
-                  <span>Posted on {{postDate}}</span> |
-                  <span>In <a>{{category}}</a></span> |
-                  <span>visitors {{visitors}}</span> 
+                  <span>Posted on {{articleInfo.author}}</span> |
+                  <span>In <a href="javascript:void">{{articleInfo.category? articleInfo.category.label : ' '}}</a></span> |
+                  <span>tags: 
+                    <el-tag class="article-tag" @click="tagClick(tag.id)" type="success" size="mini" v-for="tag in articleInfo.tags" :key="tag.id">
+                      {{tag.tagName}}
+                    </el-tag>
+                  </span> |
+                  <span>visitors {{articleInfo.views}}</span> 
                 </div>
               </div>
             </el-col>
@@ -20,12 +25,10 @@
         </el-header>
         <el-main class="article-content">
           <div class="img-box">
-            <img class="img-content" src="https://i.loli.net/2020/08/30/RfLEX7Ty1FlqbGm.jpg">
+            <img class="img-content" :src="articleInfo.coverUrl">
           </div>
           <div class="content">
-            读后感时代光华单身公害读后感时代光华单身公害读后感时代光华单身公害读后感时代光华单身公害读后感时代光华单身公害读后感时代光华单身公害
-            读后感时代光华单身公害读后感时代光华单身公害读后感时代光华单身公害读后感时代光华单身公害
-            读后感时代光华单身公害读后感时代光华单身公害读后感时代光华单身公害读后感时代光华单身公害 
+              {{articleInfo.content}}
           </div>
         </el-main>
       </el-container>
@@ -34,22 +37,26 @@
 </template>
 
 <script lang="ts">
+import { ArticleDto } from '@/models';
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class Article extends Vue {
   @Prop() private msg!: string;
 
-  postDate: string = '2020-08-24';
-  category: string = '数据结构';
-  visitors: number = 299;
+  @Prop() private articleInfo!: ArticleDto;
+
+
+  created() {
+  }
+
+  tagClick(tagId: string) {
+    console.log(tagId);
+  }
 }
 </script>
 
 <style scoped lang="less">
-
-
-
 
 .article-wrapper {
   width: 700px;
@@ -98,6 +105,12 @@ export default class Article extends Vue {
         padding-top: 10px;
         color: #999;
 
+        .article-tag {
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
       }
 
       
@@ -106,12 +119,13 @@ export default class Article extends Vue {
     .article-content {
       padding-top: 0px;
       .img-box {
-        height: 260px;
+        max-height: 260px;
         margin-bottom: 10px;
+        display:flex;
+        align-items:center; 
+        justify-content:center;
         .img-content {
-          max-width: 70%;
-          height: auto;
-          margin: 0 auto;
+          max-height: inherit;
           display: block;
         }
       }

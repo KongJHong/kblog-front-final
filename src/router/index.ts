@@ -14,11 +14,35 @@ const constantRoutes: Array<RouteConfig> = [
     redirect: '/home',
     children: [
       {
-        path: 'home',
+        path: '/home',
         component: () => import("@/views/Home.vue"),
         name: 'Home',
         meta: {
-          title: '首页'
+          title: '首页',
+        }
+      },
+      {
+        path: '/categories',
+        component: () => import("@/views/Categories.vue"),
+        name: 'Categories',
+        meta: {
+          title: '分类'
+        },
+      },
+      {
+        path: '/category-detail/:type/:id',
+        component: () => import("@/views/CategoriesDetail.vue"),
+        name: 'CategoriesDetail',
+        meta: {
+          title: '分类详情'
+        }
+      },
+      {
+        path: '/article',
+        component: () => import("@/views/Article.vue"),
+        name: 'Article',
+        meta: {
+          title: '文章'
         }
       }
     ]

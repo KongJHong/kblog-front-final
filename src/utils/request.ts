@@ -13,7 +13,7 @@ axios.defaults.headers = {
   "Content-Type": "application/json;charset=utf8"
 }
 
-axios.defaults.baseURL = "http://localhost:4000";
+axios.defaults.baseURL = "http://localhost:2525";
 
 // request请求拦截
 axios.interceptors.request.use((config: AxiosRequestConfig)=>{

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "set NODE_ENV=production && vue-cli-service serve",
-    "dev": "set NODE_ENV=development && vue-cli-service serve",
+    "dev": "vsvg -s ./src/icons/svg -t ./src/icons/components --ext ts --es6 && set NODE_ENV=development && vue-cli-service serve",
     "lint": "vue-cli-service lint",
     "build": "vue-cli-service build",
     "svg": "vsvg -s ./src/icons/svg -t ./src/icons/components --ext ts --es6"
@@ -15,6 +15,7 @@
     "core-js": "^3.6.5",
     "element-ui": "^2.13.2",
     "js-cookie": "^2.2.1",
+    "mavon-editor": "^2.9.0",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
     "vue-property-decorator": "^8.4.2",

@@ -40,8 +40,9 @@ export default class Layout extends Vue{
 <style lang="less" scoped>
   
   .home {
-    height: 1000px;
-    background-color: aqua;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: #EEEEEE;
     padding: 0px
   }
 </style>

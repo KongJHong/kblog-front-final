@@ -1,2 +1,11 @@
 /* tslint:disable */
+import './arrow-up'
+import './comments'
+import './editor'
+import './folder'
+import './github'
+import './phone'
 import './qq'
+import './tags'
+import './user'
+import './views'

@@ -1,9 +1,9 @@
 <template>
   <div class="home">
-    <stick-sidebar class="stick"/>
+    <stick-sidebar/>
 
     <div class="articles">
-      <Article v-for="count in counts" :key="count"/>
+      <Article v-for="article in articles" :key="article.id" :articleInfo="article"/>
     </div>
   </div>
 
@@ -11,8 +11,10 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import {getAllArticles} from '@/api/article-api';
 import StickSidebar from "@/components/StickSidebar.vue";
 import Article from "@/components/Article.vue";
+import { ArticleDto } from '@/models';
 @Component({
   name: 'Home',
   components: {
@@ -22,7 +24,14 @@ import Article from "@/components/Article.vue";
 })
 
 export default class Home extends Vue{
-   counts =10;
+   
+  private articles: Array<ArticleDto> = [];
+
+  created() {
+    getAllArticles().then(resp => {
+      this.articles = resp.data;
+    })
+  }
 }
 </script>
 
@@ -31,7 +40,7 @@ export default class Home extends Vue{
   
   .home  {
     .articles {
-      height: 100%;
+      padding-top: 10px;
       overflow: hidden;
       overflow-y: auto;
     }
