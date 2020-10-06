@@ -1,9 +1,13 @@
 /* tslint:disable */
 import './arrow-up'
+import './calendar'
 import './comments'
+import './document'
 import './editor'
 import './folder'
 import './github'
+import './info'
+import './pen'
 import './phone'
 import './qq'
 import './tags'

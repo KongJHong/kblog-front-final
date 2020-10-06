@@ -83,6 +83,9 @@ export default class StickSidebar extends Vue {
   overflow-y: scroll;
   border-radius: 4px;
   z-index: 0;
+  box-shadow: 0 0px 0 #e5e5e5,
+              0 0 15px rgba(0, 0, 0, .12),
+              0 2px 4px rgba(0, 0, 0, .05);
 
   &::-webkit-scrollbar{
     width: 0px !important;
@@ -100,6 +103,14 @@ export default class StickSidebar extends Vue {
     width: 100%;
     overflow: hidden;
     background-color: inherit;
+  }
+
+
+  /deep/ .el-divider {
+    margin: 10px 0;
+    display: block;
+    height: 1px;
+    width: 92%;
   }
 
 

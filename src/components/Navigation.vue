@@ -93,12 +93,25 @@
 
           <!-- 最新评论 -->
           <div class="card-lastest-comments">
-            <span>最新评论</span>
+            <span><svg-icon name="pen"/> |  最新评论</span>
             <el-divider></el-divider>
             <template v-for="index of 5">
               <comment-ticket :key="index"></comment-ticket>
               <el-divider :key="index"></el-divider>
             </template>
+          </div>
+
+          <div class="card-website-info">
+            <span><svg-icon name="info"/> |  网站信息</span>
+            <el-divider></el-divider>
+            <div class="website-info-box">
+              <span class="each-info"><svg-icon name="document"/> 文章总数: xx 篇</span>
+              <span class="each-info"><svg-icon name="folder"/> 目录总数: xx 个</span>
+              <span class="each-info"><svg-icon name="tags"/> 标签个数: xx 个</span>
+              <span class="each-info"><svg-icon name="pen"/> 留言总数: xx 条</span>
+              <span class="each-info"><svg-icon name="comments"/> 评论总数: xx 条</span>
+              <span class="each-info"><svg-icon name="calendar"/> 最后更新时间: 2020-10-05 20:00:00</span>
+            </div>
           </div>
         </el-card>
         
@@ -159,13 +172,29 @@ export default class Navigation extends Vue {
     position: fixed;
     left: 0;
     top: 0;
-    background-color: rgba(255, 255, 255, 1);
+    // background-color: rgba(255, 255, 255, 1);
+    background-image: url("../assets/amber.jpg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 0px 0 rgb(67, 47, 40),
+                0 0 15px #412f1c,
+                0 1px 3px rgba(0, 0, 0, .05);
+
     z-index: 99999;
 
     .navbar-left {
       text-align: left;
       padding-left: 30px;
       background-color: inherit;
+    }
+
+    /deep/ .el-drawer {
+      overflow: scroll;
+      &::-webkit-scrollbar{
+        width: 0px !important;
+        height: 0px;
+      }
     }
 
     /deep/ :focus {
@@ -212,6 +241,9 @@ export default class Navigation extends Vue {
         width: 100%;
         min-height: 260px;
         background-color: #eeeeee;
+        box-shadow: 0 0px 0 #e5e5e5,
+              0 0 15px rgba(0, 0, 0, .12),
+              0 2px 4px rgba(0, 0, 0, .05);
 
         .card-introduction-self {
           
@@ -263,13 +295,17 @@ export default class Navigation extends Vue {
         
       }
 
-      .card-lastest-comments {
+      .card-lastest-comments ,.card-website-info {
           width: 100%;
           min-height: 260px;
           background-color: #eeeeee;
-          margin-top: 10px;
+          margin-top: 20px;
           line-height: 36px;
           padding: 0 5px;
+          font-weight: bold;
+          box-shadow: 0 0px 0 #e5e5e5,
+              0 0 15px rgba(0, 0, 0, .12),
+              0 2px 4px rgba(0, 0, 0, .05);
 
           /deep/ .el-divider {
             margin: 0;
@@ -277,14 +313,25 @@ export default class Navigation extends Vue {
             height: 1px;
             width: 92%;
           }
+
+          .website-info-box {
+            padding: 10px;
+            font-weight: normal;
+            
+            .each-info {
+              display: block;
+            }
+          }
+          
       }
+
     }
 
 
 
     .navbar-middle {
       text-align: center;
-      background-color: #fff;
+      // background-color: #fff;
       .el-button {
         background-color: #fff;
       }

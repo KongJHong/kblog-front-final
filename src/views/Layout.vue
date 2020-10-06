@@ -42,7 +42,7 @@ export default class Layout extends Vue{
   .home {
     min-height: 100vh;
     overflow: hidden;
-    background-color: #EEEEEE;
+    background-color:#f8f9fe;
     padding: 0px
   }
 </style>

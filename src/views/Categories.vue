@@ -119,6 +119,7 @@ export default class Categories extends Vue{
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 20px;
+    
   }
 
   .el-aside {
@@ -136,9 +137,12 @@ export default class Categories extends Vue{
   
   
 
-  .el-container { 
+  /deep/ .el-container { 
     min-height: 500px;
     background-color: #e9eef3;
+    box-shadow: 0 0px 0 rgb(67, 47, 40),
+                0 0 15px #412f1c,
+                0 1px 3px rgba(0, 0, 0, .05);
     .el-main { 
       color: #333;
 

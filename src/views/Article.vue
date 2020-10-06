@@ -34,10 +34,6 @@
     <div class="comment-area">
       <comments/>
     </div>
-    
-    <div class="comment-area">
-      <article-comment/>
-    </div>
   </div>
 
 </template>
@@ -81,7 +77,6 @@ export default class Article extends Vue{
     background-color: #fff;
     padding-top: 20px;
     margin: 20px auto;
-    // min-height: 300px;
     width: 900px;
 
     .el-divider {
